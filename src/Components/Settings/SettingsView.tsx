@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-component";
+import { Link } from "react-router-dom";
 
 import { Icon } from 'react-icons-kit';
 import { home } from 'react-icons-kit/feather/home';
@@ -16,7 +16,7 @@ interface ISettingsView {
 function SettingsView(props: ISettingsView) {
     return (
         <div id="settings">
-            <Link href={props.homepageUrl} className="settings-icon pull-right">
+            <Link to={props.homepageUrl} className="settings-icon pull-right">
                 <Icon icon={home} size={32} />
             </Link>
             <h1>Settings</h1>

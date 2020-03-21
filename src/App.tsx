@@ -33,8 +33,8 @@ const AppRouter: FunctionComponent = () => {
   return (
     <div className="App">
       <Router ref={routerRef}>
-        <Route path={baseUrl + "/"} component={isCoordsSet ? PrayerTime : LocationPermission} />
-        <Route path={baseUrl + "/settings"} component={Settings} />
+        <Route exact path={baseUrl + "/"} component={isCoordsSet ? PrayerTime : LocationPermission} />
+        <Route exact path={baseUrl + "/settings"} component={Settings} />
         {/* <NotFound handler={LocationPermission} /> */}
       </Router>
     </div>

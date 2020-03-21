@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-component";
+import { Link } from "react-router-dom";
 import moment from "moment";
 import HijrahDate from "hijrah-date";
 import PrayerTimeTable from "../PrayerTimeTable/PrayerTimeTable";
@@ -35,12 +35,12 @@ function PrayerTime() {
 export default PrayerTime;
 
 
-interface ISeetingsIconProps {
+interface ISettingsIconProps {
     settingsUrl: string
 }
 
-const SettingsIcon = (props: ISeetingsIconProps) => (
-  <Link href={props.settingsUrl} className="settings-icon pull-right">
+const SettingsIcon = (props: ISettingsIconProps) => (
+  <Link to={props.settingsUrl} className="settings-icon pull-right">
     <Icon icon={settings} size={32} />
   </Link>
 );
@@ -55,7 +55,7 @@ const Calendar = () => {
       {formattedHijriDate} / {formattedDate}
     </div>
   );
-}
+};
 
 const Place = () => {
   const placeContext = useContext(PlaceContext);
