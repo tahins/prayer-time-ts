@@ -1,4 +1,10 @@
 import geolocator from "geolocator";
+import {Coordinate} from "../@types/Coordinate";
+
+interface ILocation {
+  address: { city: string, country: string },
+  coords: { latitude: number, longitude: number }
+}
 
 export default class LocationService {
   constructor() {
@@ -11,7 +17,7 @@ export default class LocationService {
     });
   }
 
-  async getPosition() {
+  async getPosition(): Promise<Coordinate> {
     const options = {
       enableHighAccuracy: true,
       timeout: 5000,
@@ -51,7 +57,7 @@ export default class LocationService {
     };
 
     return new Promise((resolve, reject) => {
-      geolocator.locate(options, (error, location) => {
+      geolocator.locate(options, (error: ErrorEvent, location: ILocation) => {
         if (error) {
           reject(error);
           return;

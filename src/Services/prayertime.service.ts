@@ -1,7 +1,7 @@
 import Adhan from "adhan";
 import moment from "moment";
 import { getSunset } from "sunrise-sunset-js";
-import UtilService from "../Services/util.service";
+import UtilService from "./util.service";
 import PrayerTime from "../Models/prayerTime.model";
 
 export default class PrayerTimeService {

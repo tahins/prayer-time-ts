@@ -25,8 +25,6 @@ function SettingsView(props: ISettingsView) {
                 const settingsItem = props.settingsData[settingsKey];
                 const settingsOptionItem = settingsItem.options[settingsItem.selectedOptionKey];
 
-                console.log(settingsItem, settingsOptionItem);
-
                 return <div key={settingsKey} className={"block " + settingsKey}>
 
                     <h2>{settingsItem.description}</h2>

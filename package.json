@@ -1,7 +1,7 @@
 {
   "name": "prayer-time-ts",
   "version": "1.0.0",
-  "description": "",
+  "description": "Prayer time for your city.",
   "keywords": [],
   "homepage": "/",
   "main": "src/index.tsx",
