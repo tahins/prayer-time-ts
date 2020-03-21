@@ -1,0 +1,35 @@
+:root {
+  --secondary-text-color: #828282;
+}
+
+#prayerTime {
+  margin: 0 30px;
+}
+
+.flex-center { 
+  display: flex; 
+  align-items: center;
+}
+
+.information-container {
+  height: 15vh;  
+}
+
+.timetable-container {
+  height: 80vh;
+}
+
+.settings-icon {
+  color: var(--secondary-text-color);
+}
+
+#location {
+  color: var(--secondary-text-color);
+  font-size: 14px;
+  margin-top: 0.7vh;
+}
+
+.update-location {
+    border-radius: 3px;
+    margin: 5px 10px;
+}

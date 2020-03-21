@@ -1,13 +1,72 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+body, input, textarea, select, button {
+    font-family: 'Ubuntu', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button {
+    outline: none;
+    cursor: pointer;
+}
+
+button svg {
+    margin-right: 5px;
+}
+
+button.primary {
+    color: #fff;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+}
+button.primary:hover {
+    color: #fff;
+    border-color: #0062cc;
+    background-color: #0069d9;
+}
+
+button.light {
+    color: #212529;
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+}
+button.light:hover {
+    color: #212529;
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
+}
+
+button.fade {
+    color: inherit;
+    background-color: transparent;
+    border: 1px solid #bfbfbf;
+}
+button.fade:hover {
+    color: inherit;
+    background-color: #e2e6ea;
+    border: 1px solid #bfbfbf;
+}
+
+button.large {
+    padding: 10px 15px;
+}
+button.small {
+    font-size: 12px;
+    padding: 5px 7px;
+}
+button.shadow {
+    box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.3);
+}
+
+select {
+    padding: 10px;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
 }

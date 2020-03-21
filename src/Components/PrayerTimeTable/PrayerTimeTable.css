@@ -1,0 +1,74 @@
+:root {
+  --main-bg-color: coral;
+  --prayerTime-bg-color: white;
+  --prayerTime-border-color: #d5d5d5;
+  --prayerTime-primary-text-color: black;
+  --prayerTime-secondary-text-color: #99a3a9;
+  --current-prayerTime-bg-color: #4489fe;
+  --current-prayerTime-primary-text-color: white;
+  --current-prayerTime-secondary-text-color: whitesmoke;
+
+  --gutter-size: 15px;
+  --primary-text-font-size: 16px;
+  --secondary-text-font-size: 14px;
+}
+
+#prayerTimeTable {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-box-shadow: 0px 0px 70px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 70px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 70px 0px rgba(0, 0, 0, 0.2);
+}
+
+#prayerTimeRow {
+  position: relative;
+  padding: var(--gutter-size);
+  border-bottom: 1px solid var(--prayerTime-border-color);
+  background-color: var(--prayerTime-bg-color);
+}
+
+.prayer-icon {
+  float: right;
+  color: var(--prayerTime-secondary-text-color);
+}
+
+.prayer-name {
+  line-height: 1.5;
+}
+
+.prayer-time {
+  color: var(--prayerTime-secondary-text-color);
+  font-size: var(--secondary-text-font-size);
+}
+
+.current-prayer-time {
+  z-index: 1 !important;
+  border: 0 !important;
+  color: var(--current-prayerTime-primary-text-color);
+  margin-left: calc(var(--gutter-size) * -1);
+  margin-right: calc(var(--gutter-size) * -1);
+  padding-left: calc(var(--gutter-size) * 2) !important;
+  padding-right: calc(var(--gutter-size) * 2) !important;
+  background-color: var(--current-prayerTime-bg-color) !important;
+
+  -webkit-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.3);
+}
+
+.current-prayer-time .prayer-time,
+.current-prayer-time .prayer-icon,
+.current-prayer-time .prayer-time-remaining {
+  color: var(--current-prayerTime-secondary-text-color);
+}
+
+.current-prayer-time .prayer-name {
+  font-size: 120%;
+}
+
+.prayer-time-remaining {
+  margin-top: 10px;
+  font-size: var(--secondary-text-font-size);
+}

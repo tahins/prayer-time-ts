@@ -1,0 +1,17 @@
+{
+    "prayerTimesToShow": [
+        "fajr",
+        "sunrise",
+        "dhuhr",
+        "asr",
+        "maghrib",
+        "isha",
+        "midnight"
+    ],
+    "storagePrefix": "prayertime",
+    "storageKeys": {
+        "position": "position",
+        "place": "place",
+        "selectedSettingsOptions": "selectedSettingsOptions"
+    }
+}

@@ -1,0 +1,28 @@
+#settings {
+    margin: 30px;
+}
+
+#settings .block {
+    border-bottom: 1px solid var(--prayerTime-border-color);
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+#settings h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+#settings h2 {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#settings h3 {
+    font-size: 14px;
+    font-weight: normal;
+    color: var(--prayerTime-secondary-text-color);
+}
+
+#settings p {}
