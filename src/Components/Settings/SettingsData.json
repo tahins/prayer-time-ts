@@ -54,5 +54,16 @@
                 "description": "Later Asr time"
             }
         }
+    },
+    "hijriDateAdjustment": {
+        "description": "Adjust Hijri date",
+        "defaultOptionKey": "0",
+        "options": {
+            "-2": { "name":  "-2 days", "description":  "Subtract two days with the Hijri date"},
+            "-1": { "name":  "-1 day", "description":  "Subtract one day with the Hijri date"},
+            "0": { "name":  "0 day", "description":  "Make no adjustment with the Hijri date"},
+            "+1": { "name":  "+1 day", "description":  "Add two days with the Hijri date"},
+            "+2": { "name":  "+2 days", "description":  "Add one day with the Hijri date"}
+        }
     }
 }
