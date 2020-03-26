@@ -9,12 +9,13 @@ function Settings() {
     const homepageUrl = UtilService.getBaseUrl() + "/";
 
     const selectionHandler = (settingsKey: string, selectedKey: string) => {
+        console.log(settingsKey, selectedKey);
         let selectedOptions = { ...settingsContext.selectedOptions };
         selectedOptions[settingsKey] = {
             optionKey: selectedKey,
-            option: settingsContext.getSelectedOption(settingsKey, selectedKey)
+            option: settingsContext.getSelectedOption && settingsContext.getSelectedOption(settingsKey, selectedKey)
         };
-        settingsContext.setSelectedOptions(selectedOptions);
+        settingsContext.setSelectedOptions && settingsContext.setSelectedOptions(selectedOptions);
     };
 
     return <SettingsView

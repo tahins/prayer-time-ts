@@ -11,7 +11,7 @@ export default class PrayerTimeService {
   private readonly _adhanPrayerTimes: Adhan.PrayerTimes;
   private readonly _prayerTimes: {fajr: Date, sunrise: Date, dhuhr: Date,
     asr: Date, maghrib: Date, isha: Date, midnight: Date, [key: string]: any,
-    currentPrayer: () => number, nextPrayer: () => number};
+    currentPrayer?: () => number, nextPrayer?: () => number};
   private readonly _timeKeys = ["fajr", "sunrise", "dhuhr", "asr", "maghrib", "isha", "midnight"];
 
   constructor(latitude: number, longitude: number, calculationMethod: string, madhab: string) {
@@ -27,17 +27,15 @@ export default class PrayerTimeService {
 
     this._prayerTimes = {
       ...this._adhanPrayerTimes,
-      midnight: this._getMidnight(this._adhanPrayerTimes.fajr),
-      currentPrayer: () => 0,
-      nextPrayer: () => 0,
+      midnight: this._getMidnight(this._adhanPrayerTimes.fajr)
     };
   }
 
   getPrayerTimes(hourMode: "12h"|"24h" = "12h", date = new Date()) {
     const UTCTimezoneOffsetInHours = date.getTimezoneOffset() / -60;
     const adhanFormattedTime = Adhan.Date.formattedTime;
-    let currentTimeIndex = this._prayerTimes.currentPrayer();
-    let nextTimeIndex = this._prayerTimes.nextPrayer();
+    let currentTimeIndex = this._prayerTimes.currentPrayer ? this._prayerTimes.currentPrayer() : 0;
+    let nextTimeIndex = this._prayerTimes.nextPrayer ? this._prayerTimes.nextPrayer() : 0;
 
     let prayerTimes: {[key: string]: any} = {};
     this._timeKeys.forEach((key, index) => {

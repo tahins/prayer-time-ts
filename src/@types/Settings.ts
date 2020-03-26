@@ -10,7 +10,7 @@ type SettingsItem = {
     "options": SettingsOptions
 }
 
-type SettingsOptions = {
+export type SettingsOptions = {
     [key: string]: SettingsOption
 }
 
