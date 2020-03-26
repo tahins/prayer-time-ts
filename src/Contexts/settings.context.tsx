@@ -1,66 +1,44 @@
 import React, { useState } from "react";
-import { Settings } from "../@types/Settings";
+import { TSettingsContext, UserPreference } from "../@types/Settings";
 import LocalStorageService from "../Services/localstorage.service";
 
 import defaultSettingsData from "../Components/Settings/SettingsData.json";
-
-type SettingsContext = {
-    settings: Settings,
-    selectedOptions: { [key: string]: any },
-    getSelectedOption: (settingsKey: string, selectedKey: string) => string,
-    setSelectedOptions: (selectedOptions: any) => void
-    setSettings: (settingsKey: string, selectedOptionKey: string) => void
-}
 
 interface ISettingsContextProps {
     children: any
 }
 
-const initialSettingsContextValue: SettingsContext = {
+const initialSettingsContextValue: TSettingsContext = {
     settings: defaultSettingsData,
-    setSettings: () => {},
-    selectedOptions: {},
-    getSelectedOption: () => "",
-    setSelectedOptions: () => {}
+    userPreference: {},
+    saveUserPreferenceItem: () => {}
 };
-const SettingsContext = React.createContext<SettingsContext>(initialSettingsContextValue);
+
+const SettingsContext = React.createContext<TSettingsContext>(initialSettingsContextValue);
 
 function SettingsContextProvider(props: ISettingsContextProps) {
-    let settingsDataFromStorage = LocalStorageService.getSettingsFromStorage();
-    let initialSettingsContextData = settingsDataFromStorage || initialSettingsContextValue.settings;
-    let [settingsData, setSettingsDataInState] = useState(initialSettingsContextData);
+    let userPreferenceFromStorage: UserPreference = LocalStorageService.getUserPreference();
+    let initialUserPreference = userPreferenceFromStorage || {};
+    let [userPreference, setUserPreference] = useState(initialUserPreference);
 
-    // const getSelectedOption = (settingsKey: string, selectedOptionKey: string) => {
-    //     return initialSettingsContextValue.settings[settingsKey].options[selectedOptionKey];
-    // }
+    const saveUserPreferenceItem = (preferenceKey: string, preferenceValue: string) => {
+        const newUserPreference = {...userPreference, [preferenceKey]: preferenceValue};
+        saveUserPreference(newUserPreference);
+    };
 
-    // if (!defaultSelectedOptions) {
-    //     defaultSelectedOptions = {};
-    //     settingsKeys.forEach(settingsKey => {
-    //         let optionKey = defaultSettingsData[settingsKey].defaultOptionKey;
-    //         let option = getSelectedOption(settingsKey, optionKey);
-
-    //         defaultSelectedOptions[settingsKey] = { optionKey, option };
-    //     });
-    // }
-
-    const setSettingsData = (settingsKey: string, selectedOptionKey: string) => {
-        settingsData[settingsKey].selectedOptionKey = selectedOptionKey;
-        setSettingsDataInState(settingsData);
+    const saveUserPreference = (userPreference: UserPreference) => {
+        setUserPreference(userPreference);
+        LocalStorageService.storeUserPreference(userPreference);
     };
 
     return <SettingsContext.Provider
         value={{
-            settings: settingsData,
-            setSettings: setSettingsData,
-            selectedOptions: {},
-            getSelectedOption: () => "",
-            setSelectedOptions: () => {}
+            settings: defaultSettingsData,
+            userPreference,
+            saveUserPreferenceItem
         }}>
         {props.children}
     </SettingsContext.Provider>
 }
-
-
 
 export { SettingsContextProvider, SettingsContext };

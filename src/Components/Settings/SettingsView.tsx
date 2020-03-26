@@ -5,11 +5,13 @@ import { Icon } from 'react-icons-kit';
 import { home } from 'react-icons-kit/feather/home';
 
 import "./Settings.css";
+import {UserPreference} from "../../@types/Settings";
 
 interface ISettingsView {
     homepageUrl: string,
     settingsKeys: string[],
     settingsData: {[key: string]: any},
+    userPreference: UserPreference,
     handleSelect: (key: string, value: string) => void
 }
 
@@ -23,7 +25,8 @@ function SettingsView(props: ISettingsView) {
             <br />
             {props.settingsKeys.map(settingsKey => {
                 const settingsItem = props.settingsData[settingsKey];
-                const settingsOptionItem = settingsItem.options[settingsItem.selectedOptionKey];
+                const settingsOptionKey = props.userPreference[settingsKey] || settingsItem.defaultOptionKey;
+                const settingsOptionItem = settingsItem.options[settingsOptionKey];
 
                 return <div key={settingsKey} className={"block " + settingsKey}>
 
@@ -33,7 +36,7 @@ function SettingsView(props: ISettingsView) {
 
                     <p>{settingsOptionItem.note}</p>
 
-                    <select value={settingsItem.selectedOptionKey}
+                    <select value={settingsOptionKey}
                         onChange={event => props.handleSelect(settingsKey, event.target.value)}>
                         {Object.keys(settingsItem.options).map(optionKey => (
                             <option key={optionKey} value={optionKey}>

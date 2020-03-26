@@ -1,7 +1,7 @@
 import AppConfig from "../AppConfig.json";
 import { Coordinate } from "../@types/Coordinate";
 import { Place } from "../@types/Place";
-import { Settings } from "../@types/Settings";
+import {UserPreference} from "../@types/Settings";
 
 export default class LocalStorageService {
     static setPosition(position: Coordinate) {
@@ -18,11 +18,11 @@ export default class LocalStorageService {
         return LocalStorageService.get(AppConfig.storageKeys.place) as Place;
     }
 
-    static storeSettingsToStorage(selectedSettingsOptions: Settings) {
-        return LocalStorageService.set(AppConfig.storageKeys.selectedSettingsOptions, selectedSettingsOptions);
+    static storeUserPreference(userPreference: UserPreference) {
+        return LocalStorageService.set(AppConfig.storageKeys.selectedSettingsOptions, userPreference);
     }
-    static getSettingsFromStorage() {
-        return LocalStorageService.get(AppConfig.storageKeys.selectedSettingsOptions) as Settings;
+    static getUserPreference() {
+        return LocalStorageService.get(AppConfig.storageKeys.selectedSettingsOptions) as UserPreference;
     }
 
     static set(key: string, value: string | Object) {
@@ -43,7 +43,7 @@ export default class LocalStorageService {
         } catch (error) { }
 
         return value;
-    }
+    };
 
     static getKey = (key: string) => AppConfig.storagePrefix + "." + key;
 }

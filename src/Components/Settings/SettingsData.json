@@ -2,8 +2,6 @@
     "method": {
         "description": "Calculation Method name",
         "defaultOptionKey": "UmmAlQura",
-        "selectedOptionKey": "UmmAlQura",
-        "optionKey": "UmmAlQura",
         "options": {
             "MuslimWorldLeague": {
                 "name": "Muslim World League",
@@ -46,8 +44,6 @@
     "madhab": {
         "description": "Madhab, used to calculate Asr",
         "defaultOptionKey": "Shafi",
-        "selectedOptionKey": "Shafi",
-        "optionKey": "Shafi",
         "options": {
             "Shafi": {
                 "name": "Shafi",

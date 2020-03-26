@@ -5,8 +5,6 @@ export type Settings = {
 type SettingsItem = {
     "description": string,
     "defaultOptionKey": string,
-    "selectedOptionKey": string,
-    "optionKey": string,
     "options": SettingsOptions
 }
 
@@ -17,4 +15,14 @@ export type SettingsOptions = {
 type SettingsOption = {
     "name": string,
     "description": string
+}
+
+export type TSettingsContext = {
+    settings: Settings,
+    userPreference: UserPreference,
+    saveUserPreferenceItem: (preferenceKey: string, preferenceValue: string) => void
+}
+
+export type UserPreference = {
+    [key: string]: string
 }

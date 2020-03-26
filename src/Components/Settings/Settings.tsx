@@ -8,22 +8,12 @@ function Settings() {
     let settingsKeys = Object.keys(settingsContext.settings);
     const homepageUrl = UtilService.getBaseUrl() + "/";
 
-    const selectionHandler = (settingsKey: string, selectedKey: string) => {
-        console.log(settingsKey, selectedKey);
-        let selectedOptions = { ...settingsContext.selectedOptions };
-        selectedOptions[settingsKey] = {
-            optionKey: selectedKey,
-            option: settingsContext.getSelectedOption && settingsContext.getSelectedOption(settingsKey, selectedKey)
-        };
-        settingsContext.setSelectedOptions && settingsContext.setSelectedOptions(selectedOptions);
-    };
-
     return <SettingsView
         homepageUrl={homepageUrl}
         settingsData={settingsContext.settings}
         settingsKeys={settingsKeys}
-        // selectedOptions={settingsContext.selectedOptions}
-        handleSelect={selectionHandler}
+        userPreference={settingsContext.userPreference}
+        handleSelect={settingsContext.saveUserPreferenceItem}
     />
 }
 
