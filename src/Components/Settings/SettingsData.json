@@ -73,6 +73,7 @@
             "blue": { "name":  "Blue", "description":  "Blue theme color"},
             "green": { "name":  "Green", "description":  "Green theme color"},
             "orange": { "name":  "Orange", "description":  "Orange theme color"},
+            "purple": { "name":  "Purple", "description":  "Purple theme color"},
             "pink": { "name":  "Pink", "description":  "Pink theme color"},
             "dark": { "name":  "Dark", "description":  "Dark theme"}
         }

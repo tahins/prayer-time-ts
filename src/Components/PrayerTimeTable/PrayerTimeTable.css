@@ -9,6 +9,7 @@
   --current-prayerTime-bg-color-blue: #4489fe;
   --current-prayerTime-bg-color-green: #0ac244;
   --current-prayerTime-bg-color-orange: #d96826;
+  --current-prayerTime-bg-color-purple: #8826d9;
   --current-prayerTime-bg-color-pink: #eb478b;
   --current-prayerTime-bg-color-dark: #2e3538;
   --current-prayerTime-primary-text-color: white;
@@ -78,6 +79,10 @@
 
 .orange .current-prayer-time {
   background-color: var(--current-prayerTime-bg-color-orange) !important;
+}
+
+.purple .current-prayer-time {
+  background-color: var(--current-prayerTime-bg-color-purple) !important;
 }
 
 .pink .current-prayer-time {

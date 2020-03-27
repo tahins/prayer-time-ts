@@ -2,6 +2,7 @@
   --main-bg-color-blue: #e4e8f1;
   --main-bg-color-green: #e7fef0;
   --main-bg-color-orange: #feebe7;
+  --main-bg-color-purple: #f6e7fe;
   --main-bg-color-pink: #fee7f0;
   --main-bg-color-dark: black;
 
@@ -26,6 +27,10 @@ body, .App {
 
 .App.orange {
   background-color: var(--main-bg-color-orange);
+}
+
+.App.purple {
+  background-color: var(--main-bg-color-purple);
 }
 
 .App.pink {
