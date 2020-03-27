@@ -1,5 +1,7 @@
 #settings {
-    margin: 30px;
+    margin: auto;
+    padding: 35px 95px;
+    max-width: var(--app-max-width);
 }
 
 #settings .block {

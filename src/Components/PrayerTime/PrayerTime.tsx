@@ -21,16 +21,18 @@ function PrayerTime() {
         settingsContext.settings.hijriDateAdjustment.defaultOptionKey);
 
     return (
-        <div id="prayerTime">
-            <div className="flex-center information-container">
-                <div className="full-width datetime-information">
-                    <SettingsIcon settingsUrl={settingsUrl}/>
-                    <Calendar adjustmentInDays={hijriDateAdjustment}/>
-                    <Place/>
+        <div id="prayerTimeContainer">
+            <div id="prayerTime">
+                <div className="flex-center information-container">
+                    <div className="full-width datetime-information">
+                        <SettingsIcon settingsUrl={settingsUrl}/>
+                        <Calendar adjustmentInDays={hijriDateAdjustment}/>
+                        <Place/>
+                    </div>
                 </div>
-            </div>
-            <div className="flex-center timetable-container">
-                <PrayerTimeTable latitude={coords.latitude} longitude={coords.longitude}/>
+                <div className="flex-center timetable-container">
+                    <PrayerTimeTable latitude={coords.latitude} longitude={coords.longitude}/>
+                </div>
             </div>
         </div>
     );

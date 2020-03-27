@@ -1,10 +1,16 @@
 :root {
   --main-bg-color: coral;
   --prayerTime-bg-color: white;
+  --prayerTime-bg-color-dark: black;
   --prayerTime-border-color: #d5d5d5;
+  --prayerTime-border-color-dark: #23272c;
   --prayerTime-primary-text-color: black;
   --prayerTime-secondary-text-color: #99a3a9;
-  --current-prayerTime-bg-color: #4489fe;
+  --current-prayerTime-bg-color-blue: #4489fe;
+  --current-prayerTime-bg-color-green: #0ac244;
+  --current-prayerTime-bg-color-orange: #d96826;
+  --current-prayerTime-bg-color-pink: #eb478b;
+  --current-prayerTime-bg-color-dark: #2e3538;
   --current-prayerTime-primary-text-color: white;
   --current-prayerTime-secondary-text-color: whitesmoke;
 
@@ -17,9 +23,9 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  -webkit-box-shadow: 0px 0px 70px 0px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 0px 70px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 0px 70px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 70px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 70px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 70px 0 rgba(0, 0, 0, 0.2);
 }
 
 #prayerTimeRow {
@@ -27,6 +33,11 @@
   padding: var(--gutter-size);
   border-bottom: 1px solid var(--prayerTime-border-color);
   background-color: var(--prayerTime-bg-color);
+}
+
+.dark #prayerTimeRow {
+  border: 1px solid var(--prayerTime-border-color-dark);
+  background-color: var(--prayerTime-bg-color-dark);
 }
 
 .prayer-icon {
@@ -51,11 +62,30 @@
   margin-right: calc(var(--gutter-size) * -1);
   padding-left: calc(var(--gutter-size) * 2) !important;
   padding-right: calc(var(--gutter-size) * 2) !important;
-  background-color: var(--current-prayerTime-bg-color) !important;
 
-  -webkit-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
+}
+
+.blue .current-prayer-time {
+  background-color: var(--current-prayerTime-bg-color-blue) !important;
+}
+
+.green .current-prayer-time {
+  background-color: var(--current-prayerTime-bg-color-green) !important;
+}
+
+.orange .current-prayer-time {
+  background-color: var(--current-prayerTime-bg-color-orange) !important;
+}
+
+.pink .current-prayer-time {
+  background-color: var(--current-prayerTime-bg-color-pink) !important;
+}
+
+.dark .current-prayer-time {
+  background-color: var(--current-prayerTime-bg-color-dark) !important;
 }
 
 .current-prayer-time .prayer-time,

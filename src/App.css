@@ -1,23 +1,43 @@
 :root {
-  --main-bg-color: #e4e8f1;
+  --main-bg-color-blue: #e4e8f1;
+  --main-bg-color-green: #e7fef0;
+  --main-bg-color-orange: #feebe7;
+  --main-bg-color-pink: #fee7f0;
+  --main-bg-color-dark: black;
 
   --app-max-width: 400px;
 }
 
-body {
+body, .App {
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
-  padding: 0px;
-  margin: 0px;
-  background-color: var(--main-bg-color);
+  min-height: 100vh;
+}
+
+.App.blue {
+  background-color: var(--main-bg-color-blue);
+}
+
+.App.green {
+  background-color: var(--main-bg-color-green);
+}
+
+.App.orange {
+  background-color: var(--main-bg-color-orange);
+}
+
+.App.pink {
+  background-color: var(--main-bg-color-pink);
+}
+
+.App.dark {
+  color: white;
+  background-color: var(--main-bg-color-dark);
 }
 
 
 .full-width {
-  width: 100%;
-}
-
-.App {
-  margin: auto;
-  max-width: var(--app-max-width);
+  width: 100vw;
 }

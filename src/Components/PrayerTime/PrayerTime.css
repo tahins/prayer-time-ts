@@ -2,6 +2,11 @@
   --secondary-text-color: #828282;
 }
 
+#prayerTimeContainer {
+  margin: auto;
+  max-width: var(--app-max-width);
+}
+
 #prayerTime {
   margin: 0 30px;
 }
@@ -32,4 +37,8 @@
 .update-location {
     border-radius: 3px;
     margin: 5px 10px;
+}
+
+#calendar {
+  font-size: 18px;
 }
