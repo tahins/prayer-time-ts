@@ -1,6 +1,6 @@
 {
-  "short_name": "Prayer Time",
-  "name": "Prayer time for your city.",
+  "name": "Prayer Time",
+  "description": "Prayer time for your city.",
   "icons": [
     {
       "src": "favicon.ico",
