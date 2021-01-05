@@ -8,7 +8,7 @@
   "private": true,
   "dependencies": {
     "adhan": "3.0.0",
-    "axios": "0.18.1",
+    "axios": "0.21.1",
     "geolocator": "2.1.5",
     "hijrah-date": "1.0.3",
     "moment": "2.24.0",
